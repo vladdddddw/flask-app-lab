@@ -1,0 +1,17 @@
+body {
+    background-color: #121212; /* Головний фон темної теми */
+    color: #e0e0e0; /* Світлий колір для тексту */
+}
+
+/* Стиль для "карток" контенту */
+.content-card {
+    background-color: #1e1e1e; /* Темно-сірий фон для карток */
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+h1, h2, h3 {
+    color: #ffffff; /* Білий колір для заголовків */
+}

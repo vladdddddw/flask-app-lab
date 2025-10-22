@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<div class="content-card">
+    <div class="row">
+        <div class="col-md-3 text-center">
+            <img src="{{ url_for('static', filename='images/photo.jpg') }}"
+                 alt="Profile Photo"
+                 class="img-fluid rounded-circle"
+                 style="max-width: 150px;">
+        </div>
+
+        <div class="col-md-9">
+            <h1>Koroliuk Vlad</h1>
+            <p class="lead">Aspiring Python Developer</p>
+        </div>
+    </div>
+
+    <hr style="color: #555;">
+
+    <section class="mb-4">
+        <h2>About Me</h2>
+        <p>
+            A passionate junior developer focused on the Python ecosystem.
+        </p>
+    </section>
+
+    <section class="mb-4">
+        <h2>Education</h2>
+        <p>
+            <strong>Карпатський Національний Університет</strong><br>
+            Інженерія програмного забезпечення, Роки навчання (2023 - 2027)
+        </p>
+    </section>
+    <section class="mb-4">
+        <h2>Skills</h2>
+        <ul>
+            <li>Python (Flask)</li>
+            <li>HTML5 & CSS3</li>
+            <li>Bootstrap</li>
+            <li>Git & GitHub</li>
+            <li>SQL Basics</li>
+        </ul>
+    </section>
+
+    <section class="mb-4">
+        <h2>Projects</h2>
+        <p>Portfolio website built with Flask and Bootstrap.</p>
+    </section>
+</div>
+{% endblock %}
