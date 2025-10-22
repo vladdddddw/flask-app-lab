@@ -1,17 +1,111 @@
+
 body {
-    background-color: #121212; /* Головний фон темної теми */
-    color: #e0e0e0; /* Світлий колір для тексту */
+    background-color: #f4f7f6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
 }
 
-/* Стиль для "карток" контенту */
+
 .content-card {
-    background-color: #1e1e1e; /* Темно-сірий фон для карток */
-    border: 1px solid #333;
-    border-radius: 10px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     padding: 30px;
     margin-top: 20px;
 }
 
 h1, h2, h3 {
-    color: #ffffff; /* Білий колір для заголовків */
+    color: #2c3e50;
+}
+
+
+.btn-primary {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.btn-primary:hover {
+    background-color: #157347;
+    border-color: #146c43;
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+.cookie-management-section h2 {
+    color: #198754;
+}
+
+.cookie-form-box {
+    background-color: #f8f9fa;
+}
+
+.table-sm {
+    font-size: 0.85rem;
+}
+
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+.dark-mode .content-card,
+.dark-mode .cookie-form-box {
+    background-color: #2b2b2b;
+    border-color: #444;
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4 {
+    color: #ffffff;
+}
+
+.dark-mode .text-muted {
+    color: #adb5bd !important;
+}
+
+.dark-mode hr {
+    color: #444;
+    border-top: 1px solid #444;
+}
+
+.dark-mode .table {
+    color: #f0f0f0;
+    border-color: #444;
+}
+
+.dark-mode .table-light {
+    --bs-table-bg: #343a40;
+    --bs-table-border-color: #444;
+    color: #fff;
+}
+
+.dark-mode .table-bordered>:not(caption)>*>* {
+    border-color: #444;
+}
+
+.dark-mode .form-control {
+    background-color: #333;
+    color: #fff;
+    border-color: #555;
+}
+
+.dark-mode .form-control::placeholder {
+    color: #888;
+}
+
+.dark-mode .navbar {
+    background-color: #212529 !important;
+}
+
+.dark-mode .navbar-brand,
+.dark-mode .nav-link {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.dark-mode .navbar-brand:hover,
+.dark-mode .nav-link:hover {
+    color: #fff !important;
 }

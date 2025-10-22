@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-9"> <div class="content-card mb-4">
+            <h1 class="card-title">Welcome, {{ session.username }}!</h1>
+            <p class="card-text text-muted">This is your profile page. Manage your cookies below.</p>
+            <hr>
+                <div class="d-flex justify-content-between align-items-center">
+                    <form action="{{ url_for('users.logout') }}" method="POST" class="me-3">
+                        <button type="submit" class="btn btn-danger btn-sm">Logout</button>
+                    </form>
+                    <div>
+                        <span>Theme:</span>
+                        <a href="{{ url_for('users.set_theme', theme='light') }}" class="btn btn-outline-secondary btn-sm">
+                            <i class="fas fa-sun"></i> Light
+                        </a>
+                        <a href="{{ url_for('users.set_theme', theme='dark') }}" class="btn btn-outline-secondary btn-sm">
+                            <i class="fas fa-moon"></i> Dark
+                        </a>
+                    </div>
+                </div>
+        </div>
+
+        <div class="cookie-management-section mt-5">
+            <h2>Cookie Management</h2>
+            <hr class="mb-4">
+
+            <div class="cookie-form-box p-3 mb-4 border rounded">
+                <h4><i class="fas fa-plus-circle text-success me-2"></i>Add Cookie</h4>
+                <form method="POST">
+                    <div class="row g-2 align-items-center">
+                        <div class="col">
+                            <label for="cookie_key" class="visually-hidden">Key</label>
+                            <input type="text" name="cookie_key" id="cookie_key" class="form-control form-control-sm" placeholder="Cookie Key" required>
+                        </div>
+                        <div class="col">
+                            <label for="cookie_value" class="visually-hidden">Value</label>
+                            <input type="text" name="cookie_value" id="cookie_value" class="form-control form-control-sm" placeholder="Cookie Value" required>
+                        </div>
+                        <div class="col">
+                            <label for="cookie_expiry" class="visually-hidden">Expiry (sec)</label>
+                            <input type="number" name="cookie_expiry" id="cookie_expiry" class="form-control form-control-sm" placeholder="Expiry (sec)">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" name="action" value="add" class="btn btn-success btn-sm">Add</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="cookie-form-box p-3 border rounded h-100">
+                        <h4><i class="fas fa-trash-alt text-warning me-2"></i>Delete by Key</h4>
+                        <form method="POST">
+                            <div class="input-group input-group-sm">
+                                <input type="text" name="cookie_key_delete" class="form-control" placeholder="Key to Delete" required>
+                                <button type="submit" name="action" value="delete" class="btn btn-warning btn-sm">Delete</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                     <div class="cookie-form-box p-3 border rounded h-100">
+                        <h4><i class="fas fa-exclamation-triangle text-danger me-2"></i>Delete All</h4>
+                        <form method="POST">
+                             <p class="text-muted small">This will delete all cookies except the session cookie.</p>
+                            <button type="submit" name="action" value="delete_all" class="btn btn-danger btn-sm w-100">Delete All Cookies</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <h4 class="mt-4"><i class="fas fa-list me-2"></i>Current Cookies</h4>
+            <table class="table table-bordered table-sm small"> <thead class="table-light">
+                    <tr>
+                        <th>Key</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% if cookies %}
+                    {% for key, value in cookies.items() %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="2" class="text-center text-muted">No cookies found.</td>
+                    </tr>
+                {% endif %}
+                </tbody>
+            </table>
+        </div> </div>
+</div>
+{% endblock %}
