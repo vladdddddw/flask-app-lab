@@ -1,24 +1,24 @@
-{% extends 'base.html' %}
-
-
+{% extends "base.html" %}
+{% import "_form_helpers.html" as helpers %}
 
 {% block content %}
 <div class="content-card">
     <h1>Contact Me</h1>
-    <p>You can reach me via this form.</p>
+    <p>Please fill out the form below.</p>
 
     <hr style="color: #555;">
 
-    <form>
-        <div class="mb-3">
-            <label for="emailInput" class="form-label">Your Email</label>
-            <input type="email" class="form-control" id="emailInput" placeholder="your@email.com">
-        </div>
-        <div class="mb-3">
-            <label for="messageText" class="form-label">Message</label>
-            <textarea class="form-control" id="messageText" rows="4"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Send Message</button>
+    <form action="{{ url_for('contacts') }}" method="POST" novalidate>
+
+        {{ form.hidden_tag() }}
+
+        {{ helpers.render_form_group(form.name) }}
+        {{ helpers.render_form_group(form.email) }}
+        {{ helpers.render_form_group(form.phone) }}
+        {{ helpers.render_form_group(form.subject) }}
+        {{ helpers.render_form_group(form.message) }}
+
+        {{ form.submit(class="btn btn-primary") }}
     </form>
 </div>
 {% endblock %}

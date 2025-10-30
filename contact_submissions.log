@@ -1,0 +1,55 @@
+2025-10-30 14:13:59,411 - werkzeug - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-30 14:13:59,411 - werkzeug - [33mPress CTRL+C to quit[0m
+2025-10-30 14:13:59,413 - werkzeug -  * Restarting with stat
+2025-10-30 14:13:59,742 - werkzeug -  * Debugger is active!
+2025-10-30 14:13:59,746 - werkzeug -  * Debugger PIN: 587-061-589
+2025-10-30 14:14:28,645 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:14:28] "GET /contacts HTTP/1.1" 200 -
+2025-10-30 14:14:28,770 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:14:28] "GET /static/css/styles.css HTTP/1.1" 200 -
+2025-10-30 14:14:50,399 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:14:50] "POST /contacts HTTP/1.1" 200 -
+2025-10-30 14:14:50,419 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:14:50] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-10-30 14:15:38,662 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:15:38] "POST /contacts HTTP/1.1" 200 -
+2025-10-30 14:15:38,692 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:15:38] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-10-30 14:15:41,565 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:15:41] "POST /contacts HTTP/1.1" 200 -
+2025-10-30 14:15:41,590 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:15:41] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-10-30 14:15:44,068 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:15:44] "POST /contacts HTTP/1.1" 200 -
+2025-10-30 14:15:44,090 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:15:44] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-10-30 14:16:01,351 - root - New contact submission from Vlad (vlad.koroliuk.23@pnu.edu.ua)
+2025-10-30 14:16:01,352 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:16:01] "[32mPOST /contacts HTTP/1.1[0m" 302 -
+2025-10-30 14:16:01,363 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:16:01] "GET /contacts HTTP/1.1" 200 -
+2025-10-30 14:16:01,389 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:16:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-10-30 14:28:29,605 - werkzeug - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-30 14:28:29,606 - werkzeug - [33mPress CTRL+C to quit[0m
+2025-10-30 14:28:29,607 - werkzeug -  * Restarting with stat
+2025-10-30 14:28:29,953 - werkzeug -  * Debugger is active!
+2025-10-30 14:28:29,955 - werkzeug -  * Debugger PIN: 587-061-589
+2025-10-30 14:28:31,576 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:28:31] "[35m[1mGET /users/login HTTP/1.1[0m" 500 -
+2025-10-30 14:28:31,750 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:28:31] "GET /users/login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-10-30 14:28:31,757 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:28:31] "GET /users/login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-10-30 14:28:31,812 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:28:31] "GET /users/login?__debugger__=yes&cmd=resource&f=console.png&s=iT32fXl3frIUGeIHnK1o HTTP/1.1" 200 -
+2025-10-30 14:28:31,922 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:28:31] "GET /users/login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-10-30 14:28:33,011 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:28:33] "[35m[1mGET /users/login HTTP/1.1[0m" 500 -
+2025-10-30 14:28:33,040 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:28:33] "[36mGET /users/login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-10-30 14:28:33,042 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:28:33] "[36mGET /users/login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-10-30 14:28:33,111 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:28:33] "[36mGET /users/login?__debugger__=yes&cmd=resource&f=console.png&s=iT32fXl3frIUGeIHnK1o HTTP/1.1[0m" 304 -
+2025-10-30 14:28:33,161 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:28:33] "[36mGET /users/login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-10-30 14:28:33,723 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:28:33] "[35m[1mGET /users/login HTTP/1.1[0m" 500 -
+2025-10-30 14:28:33,746 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:28:33] "[36mGET /users/login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-10-30 14:28:33,748 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:28:33] "[36mGET /users/login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-10-30 14:28:33,771 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:28:33] "[36mGET /users/login?__debugger__=yes&cmd=resource&f=console.png&s=iT32fXl3frIUGeIHnK1o HTTP/1.1[0m" 304 -
+2025-10-30 14:28:33,862 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:28:33] "[36mGET /users/login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-10-30 14:42:08,424 - werkzeug - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-30 14:42:08,424 - werkzeug - [33mPress CTRL+C to quit[0m
+2025-10-30 14:42:08,426 - werkzeug -  * Restarting with stat
+2025-10-30 14:42:08,744 - werkzeug -  * Debugger is active!
+2025-10-30 14:42:08,747 - werkzeug -  * Debugger PIN: 587-061-589
+2025-10-30 14:42:14,134 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:42:14] "GET /users/login HTTP/1.1" 200 -
+2025-10-30 14:42:14,241 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:42:14] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-10-30 14:42:30,376 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:42:30] "[32mPOST /users/login HTTP/1.1[0m" 302 -
+2025-10-30 14:42:30,385 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:42:30] "GET /users/login HTTP/1.1" 200 -
+2025-10-30 14:42:30,413 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:42:30] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-10-30 14:42:40,576 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:42:40] "[32mPOST /users/login HTTP/1.1[0m" 302 -
+2025-10-30 14:42:40,609 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:42:40] "GET /users/profile HTTP/1.1" 200 -
+2025-10-30 14:42:40,719 - werkzeug - 127.0.0.1 - - [30/Oct/2025 14:42:40] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -

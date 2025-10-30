@@ -1,0 +1,18 @@
+
+{% macro render_form_group(field) %}
+  <div class="form-group mb-3">
+    {# Відображаємо label (назву) поля #}
+    {{ field.label(class="form-label") }}
+
+    {# Відображаємо саме поле вводу (з класом помилки, якщо є) #}
+    {{ field(class="form-control" + (" is-invalid" if field.errors else "")) }}
+
+    {# Блок для відображення помилок #}
+    {% if field.errors %}
+      <div class="invalid-feedback">
+        {# Виводимо першу помилку зі списку #}
+        {{ field.errors[0] }}
+      </div>
+    {% endif %}
+  </div>
+{% endmacro %}
