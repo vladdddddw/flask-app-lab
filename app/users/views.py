@@ -93,14 +93,14 @@ def logout():
     flash('You have been logged out.', 'info')
     return redirect(url_for('users.login'))
 
-@users_bp.route("/hi/<string:name>") # [cite: 361]
-def greetings(name): # [cite: 362]
+@users_bp.route("/hi/<string:name>")
+def greetings(name):
 
     age = request.args.get("age")
 
-    return render_template("users/hi.html", name=name.upper(), age=age) # [cite: 364, 366]
+    return render_template("users/hi.html", name=name.upper(), age=age)
 
-@users_bp.route("/admin") # [cite: 368]
+@users_bp.route("/admin")
 def admin():
 
     return redirect(url_for("users.greetings", name="Administrator"))
