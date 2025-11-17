@@ -14,17 +14,24 @@
     {% if posts %}
         {% for post in posts %}
         <div class="col-md-6 mb-4">
-            <div class="content-card h-100 d-flex flex-column">
-                <h4>{{ post.title }}</h4>
-                <p class="text-muted small">
-                    Category: <strong>{{ post.category.name.title() }}</strong> |
-                    Posted on: {{ post.posted.strftime('%Y-%m-%d') }}
-                </p>
+            <div class="content-card h-100 d-flex flex-column p-0 overflow-hidden">
+                <img src="{{ url_for('posts.static', filename='img/default.jpg') }}"
+                     class="img-fluid"
+                     alt="Post Image"
+                     style="height: 200px; width: 100%; object-fit: cover;">
 
-                <p>{{ post.content | truncate(150) }}</p>
+                <div class="p-4 flex-grow-1 d-flex flex-column">
+                    <h4>{{ post.title }}</h4>
+                    <p class="text-muted small">
+                        Category: <strong>{{ post.category.name.title() }}</strong> |
+                        Posted on: {{ post.posted.strftime('%Y-%m-%d') }}
+                    </p>
 
-                <div class="mt-auto">
-                    <a href="{{ url_for('posts.detail_post', id=post.id) }}" class="btn btn-outline-primary btn-sm">Read More</a>
+                    <p>{{ post.content | truncate(150) }}</p>
+
+                    <div class="mt-auto">
+                        <a href="{{ url_for('posts.detail_post', id=post.id) }}" class="btn btn-outline-primary btn-sm">Read More</a>
+                    </div>
                 </div>
             </div>
         </div>
