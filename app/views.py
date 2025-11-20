@@ -1,7 +1,7 @@
 from flask import render_template, flash, redirect, url_for
-from app import app  # Імпортуємо наш додаток
-from app.forms import ContactForm  # <-- 1. ІМПОРТУЄМО ФОРМУ
-import logging # <-- 2. ІМПОРТУЄМО ЛОГЕР
+from app import app  
+from app.forms import ContactForm  
+import logging 
 
 @app.route('/')
 def resume():
