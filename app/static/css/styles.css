@@ -109,3 +109,47 @@ body.dark-mode {
 .dark-mode .nav-link:hover {
     color: #fff !important;
 }
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+
+.dark-mode .content-card,
+.dark-mode .cookie-form-box {
+    background-color: #1e1e1e;
+    border-color: #333;
+    color: #e0e0e0;
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4 {
+    color: #ffffff;
+}
+
+.dark-mode .text-muted {
+    color: #b0b0b0 !important;
+}
+
+
+.dark-mode .form-control {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #fff;
+}
+
+.dark-mode .form-control::placeholder {
+    color: #888;
+}
+
+
+.dark-mode .table {
+    color: #e0e0e0;
+    border-color: #444;
+}
+.dark-mode .table-light {
+    background-color: #333;
+    color: #fff;
+    --bs-table-bg: #333;
+    --bs-table-border-color: #444;
+}

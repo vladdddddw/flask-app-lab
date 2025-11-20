@@ -1,8 +1,9 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from .config import config
 from sqlalchemy import MetaData
+from .config import config
+
 
 convention = {
     "ix": 'ix_%(column_0_label)s',
@@ -35,6 +36,8 @@ def create_app(config_name='default'):
 
     from .posts import posts_bp
     app.register_blueprint(posts_bp, url_prefix='/post')
+
+    from .users import models
 
     @app.errorhandler(404)
     def not_found(e):

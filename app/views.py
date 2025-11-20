@@ -1,6 +1,7 @@
-from flask import render_template, flash, redirect, url_for, Blueprint
+from flask import Blueprint, render_template, flash, redirect, url_for
 from app.forms import ContactForm
 import logging
+
 
 main_bp = Blueprint('main', __name__)
 
