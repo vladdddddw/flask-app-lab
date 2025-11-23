@@ -13,13 +13,16 @@
                         <a class="nav-link" href="{{ url_for('main.contacts') }}">Contacts</a>
                     </li>
 
-                    {% if session.username %}
+                    {% if current_user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('users.profile') }}">Profile</a>
+                            <a class="nav-link" href="{{ url_for('users.profile') }}">Profile ({{ current_user.username }})</a>
                         </li>
-                    {% else %}
+                        {% else %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('users.login') }}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('users.register') }}">Register</a>
                         </li>
                     {% endif %}
                 </ul>

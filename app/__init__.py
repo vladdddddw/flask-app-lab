@@ -1,9 +1,10 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_bcrypt import Bcrypt
+from flask_login import LoginManager
 from sqlalchemy import MetaData
 from .config import config
-
 
 convention = {
     "ix": 'ix_%(column_0_label)s',
@@ -14,9 +15,15 @@ convention = {
 }
 metadata = MetaData(naming_convention=convention)
 
-
 db = SQLAlchemy(metadata=metadata)
 migrate = Migrate()
+bcrypt = Bcrypt()
+login_manager = LoginManager()
+
+
+login_manager.login_view = 'users.login'
+login_manager.login_message_category = 'info'
+
 
 def create_app(config_name='default'):
     app = Flask(__name__)
@@ -24,6 +31,8 @@ def create_app(config_name='default'):
 
     db.init_app(app)
     migrate.init_app(app, db)
+    bcrypt.init_app(app)
+    login_manager.init_app(app)
 
     from . import views as main_blueprint
     app.register_blueprint(main_blueprint.main_bp)
@@ -37,7 +46,7 @@ def create_app(config_name='default'):
     from .posts import posts_bp
     app.register_blueprint(posts_bp, url_prefix='/post')
 
-    from .users import models
+
 
     @app.errorhandler(404)
     def not_found(e):

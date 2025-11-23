@@ -2,7 +2,7 @@ from flask import render_template, request, redirect, url_for, flash, session
 from . import posts_bp
 from app import db
 from .forms import PostForm, DeleteForm
-from .models import Post, PostCategory, Tag  # <-- Додали імпорт Tag
+from .models import Post, PostCategory, Tag
 from app.users.models import User
 
 
@@ -17,9 +17,7 @@ def add_post():
     form.tags.choices = [(tag.id, tag.name) for tag in tags]
 
     if form.validate_on_submit():
-
         selected_tags_ids = form.tags.data
-
         selected_tags = []
         if selected_tags_ids:
             selected_tags = db.session.scalars(db.select(Tag).where(Tag.id.in_(selected_tags_ids))).all()
@@ -31,7 +29,7 @@ def add_post():
             posted=form.publish_date.data,
             is_active=form.is_active.data,
             user_id=form.author_id.data,
-            tags=selected_tags  # <-- Зберігаємо зв'язок з тегами
+            tags=selected_tags
         )
         db.session.add(new_post)
         db.session.commit()
@@ -77,7 +75,7 @@ def edit_post(id):
     if form.validate_on_submit():
         post.title = form.title.data
         post.content = form.content.data
-        post.category = PostCategory(form.category.data)
+        post.category = form.category.data
         post.posted = form.publish_date.data
         post.is_active = form.is_active.data
         post.user_id = form.author_id.data
@@ -91,6 +89,7 @@ def edit_post(id):
         db.session.commit()
 
         flash(f"Post {post.title} has been updated!", 'success')
+
         return redirect(url_for('posts.detail_post', id=post.id))
 
     return render_template('add_post.html', form=form, title="Edit Post",
