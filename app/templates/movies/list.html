@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}My movies – MovieLab{% endblock %}
+{% block content %}
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="h3 neon-text mb-0">My movies</h1>
+    <a href="{{ url_for('movies.create_movie') }}" class="btn btn-neon">Add movie</a>
+  </div>
+
+  <form class="row g-2 mb-3" method="get">
+    <div class="col-md-6">
+      <input type="text" name="q" value="{{ search_query }}" class="form-control" placeholder="Search by title...">
+    </div>
+    <div class="col-md-3">
+      <select name="sort" class="form-select">
+        <option value="created_at" {% if sort_by == 'created_at' %}selected{% endif %}>Newest first</option>
+        <option value="title" {% if sort_by == 'title' %}selected{% endif %}>Title</option>
+        <option value="year" {% if sort_by == 'year' %}selected{% endif %}>Year</option>
+        <option value="rating" {% if sort_by == 'rating' %}selected{% endif %}>Rating</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <button type="submit" class="btn btn-outline-light neon-border w-100">Apply</button>
+    </div>
+  </form>
+
+  {% if movies %}
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+      {% for movie in movies %}
+        <div class="col">
+          <div class="card glass-card h-100">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">{{ movie.title }}</h5>
+              <p class="card-subtitle mb-2 small text-muted">
+                {{ movie.genre.name }}{% if movie.year %} • {{ movie.year }}{% endif %}
+              </p>
+              <p class="card-text small flex-grow-1">
+                {{ movie.description[:160] }}{% if movie.description and movie.description|length > 160 %}...{% endif %}
+              </p>
+              <div class="d-flex justify-content-between align-items-center mt-2">
+                <span class="badge bg-neon text-dark">
+                  {% if movie.rating is not none %}⭐ {{ "%.1f"|format(movie.rating) }}{% else %}No rating{% endif %}
+                </span>
+                <a href="{{ url_for('movies.movie_detail', movie_id=movie.id) }}" class="btn btn-sm btn-outline-light neon-border">
+                  Details
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-muted">You do not have any movies yet. Click “Add movie” to create your first one.</p>
+  {% endif %}
+{% endblock %}

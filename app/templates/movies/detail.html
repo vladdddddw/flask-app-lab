@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}{{ movie.title }} – MovieLab{% endblock %}
+{% block content %}
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-7">
+      <div class="card glass-card">
+        <div class="card-body">
+          <h1 class="h3 neon-text mb-1">{{ movie.title }}</h1>
+          <p class="small text-muted mb-3">
+            {{ movie.genre.name }}
+            {% if movie.year %} • {{ movie.year }}{% endif %}
+          </p>
+          {% if movie.rating is not none %}
+            <p class="mb-3">
+              <span class="badge bg-neon text-dark">⭐ {{ "%.1f"|format(movie.rating) }}/10</span>
+            </p>
+          {% endif %}
+          {% if movie.description %}
+            <p class="mb-4">{{ movie.description }}</p>
+          {% else %}
+            <p class="text-muted mb-4">No description.</p>
+          {% endif %}
+
+          <p class="small text-muted mb-4">
+            Owner: {{ movie.owner.username }} • Created: {{ movie.created_at.strftime('%Y-%m-%d %H:%M') }}
+          </p>
+
+          <div class="d-flex justify-content-between">
+            <a href="{{ url_for('movies.list_movies') }}" class="btn btn-outline-light neon-border">Back to list</a>
+            <div>
+              <a href="{{ url_for('movies.edit_movie', movie_id=movie.id) }}" class="btn btn-sm btn-neon me-2">Edit</a>
+              <form action="{{ url_for('movies.delete_movie', movie_id=movie.id) }}" method="post" class="d-inline">
+                <button type="submit" class="btn btn-sm btn-outline-danger"
+                        onclick="return confirm('Delete this movie?');">
+                  Delete
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

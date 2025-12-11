@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Login – MovieLab{% endblock %}
+{% block content %}
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card glass-card shadow-lg">
+        <div class="card-body">
+          <h2 class="h4 mb-4 text-center neon-text">Login</h2>
+          <form method="post">
+            {{ form.hidden_tag() }}
+            <div class="mb-3">
+              {{ form.username.label(class="form-label") }}
+              {{ form.username(class="form-control") }}
+              {% for error in form.username.errors %}
+                <div class="text-danger small">{{ error }}</div>
+              {% endfor %}
+            </div>
+            <div class="mb-3">
+              {{ form.password.label(class="form-label") }}
+              {{ form.password(class="form-control") }}
+              {% for error in form.password.errors %}
+                <div class="text-danger small">{{ error }}</div>
+              {% endfor %}
+            </div>
+            <div class="d-grid gap-2">
+              {{ form.submit(class="btn btn-neon") }}
+            </div>
+          </form>
+          <p class="small mt-3 text-center">
+            No account yet?
+            <a href="{{ url_for('auth.register') }}" class="link-neon">Register</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
